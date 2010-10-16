@@ -9,18 +9,18 @@ CakePHP / PHP / MySQL (or other db) / shell access / apache (or other webserver)
 
 Installation
 ------------
-All the files need read and execute rights (for the webserver).
+All the files need read and execute rights (for the webserver).<br />
 
 Assuming that /cake dir is your CakePHP dirctory you should place the files as above:
-/cake/app/models/link.php
-/cake/app/controllers/links_controller.php
-/cake/app/views/links
-/cake/app/views/layouts/my_small_url.ctp
-/cake/app/webroot/css/my.small.url.css
+/cake/app/models/link.php<br />
+/cake/app/controllers/links_controller.php<br />
+/cake/app/views/links<br />
+/cake/app/views/layouts/my_small_url.ctp<br />
+/cake/app/webroot/css/my.small.url.css<br />
 
-You also have to create a database and add to the /cake/app/config/database.php this:
+You also have to create a database and add to the /cake/app/config/database.php this:<br />
 
-var $mysmallurl = array(
+<pre><code>var $mysmallurl = array(
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
@@ -28,25 +28,25 @@ var $mysmallurl = array(
 		'password' => 'password',
 		'database' => 'database_name',
 		'prefix' => '',
-	);
+	);</pre></code>
 	
-In the database you need a table named links with 4 fields:
-id, alias,url and date.
-The id is PRIMARY and AUTO_INCREMENT
-The alias is unique and varchar(6)
-The url is text
-The DATE is TIMESTAMP , CURRENT_TIMESTAMP
+In the database you need a table named links with 4 fields:<br />
+id, alias,url and date.<br />
+The id is PRIMARY and AUTO_INCREMENT<br />
+The alias is unique and varchar(6)<br />
+The url is text<br />
+The DATE is TIMESTAMP , CURRENT_TIMESTAMP<br />
 
-They can be created like that (in MySQL):
+They can be created like that (in MySQL):<br />
 	
-CREATE TABLE IF NOT EXISTS `links` (
+<pre><code>CREATE TABLE IF NOT EXISTS `links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `alias` varchar(6) NOT NULL,
   `url` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `alias` (`alias`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;</pre></code>
 
 In order to truly have small urls you have to own a small domain name
 and configure properly CakePHP routes.php and your apache's httpd.conf.
