@@ -1,0 +1,88 @@
+/**
+ * CSS
+ *
+ * Copyright 2010-2011, Periklis Ntanasis <pntanasis@gmail.com>
+ *
+ * Licensed under the GNU General Public License, version 3 (GPLv3)
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2010-2011, Periklis Ntanasis <pntanasis@gmail.com>
+ * @license       GPLv3 License (http://www.opensource.org/licenses/gpl-3.0.html)
+ */
+
+body {
+	text-align:center;
+	padding-top:20%;
+}
+
+h1 {
+	text-shadow: #8cee7c 0px 2px 0px;
+}
+
+form div.submit {
+	border: 0;
+	clear: both;
+	margin-top: 10px;
+}
+
+form .submit input[type=submit] {
+	background:#62af56;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a8ea9c), to(#62af56));
+	background-image: -moz-linear-gradient(top, #a8ea9c, #62af56);
+	border-color: #2d6324;
+	color: #000;
+	text-shadow: #8cee7c 0px 1px 0px;
+}
+
+form .submit input[type=submit]:hover {
+	background:#4ca83d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#85e573), to(#4ca83d));
+	background-image: -moz-linear-gradient(top, #85e573, #4ca83d);
+}
+
+input[type=submit] {
+	display: inline;
+	font-size: 110%;
+	width: auto;
+}
+
+input {
+	clear: both;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+}
+
+input[type=text] {
+	clear: both;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	width:400px;
+}
+
+#footer
+   {     
+    color:#000000;
+    font-size:10px;
+    font-style:italic; 
+   }
+
+span.is_on 
+ { 	visibility:visible; 
+        font-size:9px;
+        font-style:italic;  
+ }
+ 
+span.is_off 
+ { 	visibility:hidden; 
+        font-size:9px;
+        font-style:italic;     
+ } 
+
+#Logo 
+   { 
+     visibility:hidden; 
+   }
+
+a:link {color:#62af56;}      /* unvisited link */
+a:visited {color:#4ca83d;}   /* visited link */
+a:hover {color:#006600;}     /* mouse over link */
+a:active {color:#62af56;}    /* selected link */
+

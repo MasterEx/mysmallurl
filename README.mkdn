@@ -1,0 +1,52 @@
+My Small Url
+------------
+This is a web application created in PHP with CakePHP 1.4.3 framework.
+It is a tiny url like service.
+
+Requirements
+------------
+CakePHP / PHP / MySQL (or other db) / shell access / apache (or other webserver)
+
+Installation
+------------
+All the files need read and execute rights (for the webserver).
+
+Assuming that /cake dir is your CakePHP dirctory you should place the files as above:
+/cake/app/models/link.php
+/cake/app/controllers/links_controller.php
+/cake/app/views/links
+/cake/app/views/layouts/my_small_url.ctp
+/cake/app/webroot/css/my.small.url.css
+
+You also have to create a database and add to the /cake/app/config/database.php this:
+
+var $mysmallurl = array(
+		'driver' => 'mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'username',
+		'password' => 'password',
+		'database' => 'database_name',
+		'prefix' => '',
+	);
+	
+In the database you need a table named links with 4 fields:
+id, alias,url and date.
+The id is PRIMARY and AUTO_INCREMENT
+The alias is unique and varchar(6)
+The url is text
+The DATE is TIMESTAMP , CURRENT_TIMESTAMP
+
+They can be created like that (in MySQL):
+	
+CREATE TABLE IF NOT EXISTS `links` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `alias` varchar(6) NOT NULL,
+  `url` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `alias` (`alias`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
+
+In order to truly have small urls you have to own a small domain name
+and configure properly CakePHP routes.php and your apache's httpd.conf.
