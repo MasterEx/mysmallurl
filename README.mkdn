@@ -20,7 +20,8 @@ Assuming that /cake dir is your CakePHP dirctory you should place the files as a
 
 You also have to create a database and add to the /cake/app/config/database.php this:<br />
 
-<pre><code>var $mysmallurl = array(
+<pre><code>
+var $mysmallurl = array(
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
@@ -28,7 +29,8 @@ You also have to create a database and add to the /cake/app/config/database.php 
 		'password' => 'password',
 		'database' => 'database_name',
 		'prefix' => '',
-	);</pre></code>
+	);
+</code></pre>
 	
 In the database you need a table named links with 4 fields:<br />
 id, alias,url and date.<br />
@@ -39,14 +41,15 @@ The DATE is TIMESTAMP , CURRENT_TIMESTAMP<br />
 
 They can be created like that (in MySQL):<br />
 	
-<pre><code>CREATE TABLE IF NOT EXISTS `links` (
+<pre><code>
+CREATE TABLE IF NOT EXISTS `links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `alias` varchar(6) NOT NULL,
   `url` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `alias` (`alias`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;</pre></code>
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;</code></pre>
 
 In order to truly have small urls you have to own a small domain name
 and configure properly CakePHP routes.php and your apache's httpd.conf.
