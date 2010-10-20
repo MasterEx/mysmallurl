@@ -61,4 +61,6 @@ RewriteRule ^/g(......)$ http://example.com/mysmallurl/go/$1 [R]
 You can use something like that in order to have smaller urls.
 The above rule will redirect http://example.com/gxxxxxx to
 http://example/mysmallurl/go/xxxxxx
+
+More:
 [Apache Module mod_rewrite](http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html)
