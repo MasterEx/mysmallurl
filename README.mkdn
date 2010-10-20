@@ -53,3 +53,12 @@ CREATE TABLE IF NOT EXISTS `links` (
 
 In order to truly have small urls you have to own a small domain name
 and configure properly CakePHP routes.php and your apache's httpd.conf.
+
+Apache Rewrite Rule Example
+---------------------------
+RewriteRule ^/g(......)$ http://example.com/mysmallurl/go/$1 [R]
+
+You can use something like that in order to have smaller urls.
+The above rule will redirect http://example.com/gxxxxxx to
+http://example/mysmallurl/go/xxxxxx
+[Apache Module mod_rewrite](http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html)
