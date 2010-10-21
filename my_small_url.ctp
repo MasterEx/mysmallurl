@@ -25,6 +25,7 @@
 <!-- If you'd like some sort of menu to 
 show up on all of your views, include it here -->
 <h1>My Small Url</h1>
+<?php echo $session->flash(); // this line displays our flash messages ?>
 
 <!-- Here's where I want my views to be displayed -->
 <?php echo $content_for_layout ?>
